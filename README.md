@@ -101,37 +101,6 @@
 
 ---
 
-##  Demo Scenarios
-
-### Scenario 1: Phishing Protection
-```
-1. User clicks malicious link
-2. Phishing site requests unlimited token approval
-3. Vigil detects: unknown contract + unlimited approval
-4. Action: BLOCKS transaction instantly
-5. Alert: "Blocked suspicious approval to 0xabc..."
-```
-
-### Scenario 2: Midnight Hack
-```
-3:00 AM - User is sleeping
-→ Hacker compromises device
-→ Tries to drain $10,000 USDC
-→ Vigil BLOCKS (exceeds $1k daily limit)
-→ User wakes up safe
-```
-
-### Scenario 3: Old Approvals
-```
-1. User has 15 active token approvals
-2. Vigil scans all contracts
-3. Finds: 3 unlimited approvals to risky contracts
-4. Action: Flags for review + offers auto-revoke
-5. User confirms → Vigil revokes permissions
-```
-
----
-
 ##  Tech Stack
 
 **Frontend:**
@@ -153,31 +122,6 @@
 - Phala Cloud (TEE deployment)
 - Encrypted user data
 - Verifiable execution
-
----
-
-##  Hackathon Compliance
-
-###  Meets All NEAR Innovation Sandbox Requirements:
-
-**1. Working Automation**
-- Real job end-to-end (wallet security)
-- Keeps working after tab closes (Shade Agent in TEE)
-- Clear boundaries (defined security rules)
-
-**2. Controls + Auditability**
-- Clear permissions and constraints
-- User approval for high-risk actions
-- Complete audit trail
-
-**3. User-Owned Memory**
-- Security rules are user data
-- Inspectable and exportable
-- Full user control
-
-**4. Cross-Chain Ready**
-- NEAR Chain Signatures support
-- Multi-chain monitoring capability
 
 ---
 
@@ -210,7 +154,7 @@ Visit `http://localhost:3000`
 
 ---
 
-## 🎮 How to Use
+##  How to Use
 
 1. **Connect Wallet**
    - Click "Connect Wallet" or "Manual Connection"
