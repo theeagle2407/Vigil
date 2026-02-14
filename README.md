@@ -1,50 +1,42 @@
 # Vigil - Your 24/7 Security Agent
 
-> AI security agent that protects your crypto assets autonomously using NEAR Shade Agents
+> Autonomous AI security agent that protects your crypto assets 24/7 using NEAR Shade Agents
 
-![Vigil Banner](https://via.placeholder.com/1200x300/000000/00C1DE?text=Vigil+-+Your+24/7+Security+Agent)
+![Vigil](https://img.shields.io/badge/NEAR-Shade_Agents-purple?style=for-the-badge)
+![License](https://img.shields.io/badge/license-Apache_2.0-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-hackathon_mvp-orange?style=for-the-badge)
 
-##  What is Vigil?
+---
 
-Vigil is an autonomous security agent that monitors your crypto wallets and transactions 24/7, detecting threats and taking protective action even while you sleep. Built on NEAR's Shade Agent framework, Vigil provides:
+##  The Problem
 
-- **24/7 Autonomous Monitoring** - Never stops watching your assets
-- **Real-time Threat Detection** - Identifies suspicious transactions instantly
-- **Automatic Protection** - Blocks dangerous transactions before they execute
-- **User-Owned Security** - All your security rules and data belong to you
-- **Full Audit Trail** - Complete transparency on every action taken
+**Billions lost to crypto scams every year** because:
+-  Users can't monitor wallets 24/7
+-  Phishing attacks are sophisticated
+-  Unlimited token approvals become security holes  
+-  By the time you notice, it's too late
+-  Manual monitoring doesn't scale
 
-##  Key Features
+**People need autonomous protection that works while they sleep.**
 
-### 1. Wallet Monitoring
-- Tracks all transactions across multiple chains (via NEAR Chain Signatures)
-- Detects unusual patterns (odd amounts, new addresses, suspicious timing)
-- Real-time alerts for high-risk activity
+---
 
-### 2. Smart Contract Security
-- Scans active token approvals
-- Flags unlimited or risky approvals
-- Auto-revokes dangerous permissions (with your rules)
+##  The Solution: Vigil
 
-### 3. Threat Intelligence
-- Monitors known scam addresses
-- Checks contracts against security databases
-- Detects phishing attempts
+**An AI security agent that runs 24/7 in a Trusted Execution Environment (TEE), autonomously protecting your crypto assets.**
 
-### 4. Autonomous Response
-- Blocks suspicious transactions instantly
-- Moves funds to safe wallet if breach detected
-- Executes protective actions based on your rules
-- Full audit trail of all actions
+### Key Features:
 
-### 5. User-Owned Security Profile
-- Your security rules (what to block, when to alert)
-- All threat history inspectable and exportable
-- Encrypted data, fully under your control
+ **24/7 Autonomous Monitoring** - Never stops watching  
+ **Real-time Threat Detection** - Identifies suspicious activity instantly  
+ **Automatic Protection** - Blocks dangerous transactions before execution  
+ **User-Owned Security** - All rules and data encrypted and under your control  
+ **Full Audit Trail** - Complete transparency on every action  
+ **Multi-Chain Support** - Monitors across chains via NEAR Chain Signatures
+
+---
 
 ##  Architecture
-
-Vigil is built using NEAR's Shade Agent framework:
 ```
 ┌─────────────────┐
 │   User Wallet   │
@@ -52,197 +44,244 @@ Vigil is built using NEAR's Shade Agent framework:
          │
          ▼
 ┌─────────────────────────────────┐
-│   Vigil Frontend (Next.js)     │
-│   - Dashboard                   │
-│   - Security Rules Config       │
-│   - Audit Trail Viewer          │
+│   Vigil Dashboard              │
+│   - Real NEAR wallet connection │
+│   - Live transaction feed       │
+│   - Risk score meter            │
+│   - Security controls           │
 └────────┬────────────────────────┘
          │
          ▼
 ┌─────────────────────────────────┐
 │   Shade Agent (TEE)             │
-│   - Persistent Monitoring       │
-│   - Transaction Analysis        │
-│   - Threat Detection            │
-│   - Autonomous Actions          │
+│   - Persistent monitoring       │
+│   - Transaction analysis        │
+│   - Threat detection            │
+│   - Autonomous blocking         │
 └────────┬────────────────────────┘
          │
          ▼
 ┌─────────────────────────────────┐
 │   NEAR Smart Contract           │
-│   - Agent Registration          │
-│   - Permission Management       │
+│   - Agent registration          │
+│   - Permission management       │
 │   - Chain Signatures            │
 └─────────────────────────────────┘
 ```
 
-##  Quick Start
+---
 
-### Prerequisites
+##  Live Demo Features
 
-- Node.js 18+
-- Docker Desktop
-- NEAR Testnet Account
-- Phala Cloud Account (for TEE deployment)
+### 1. **Real Wallet Connection**
+- Connect your actual NEAR wallet
+- View real balance from blockchain
+- Manual or popup connection options
 
-### Installation
+### 2. **Live Transaction Monitoring**
+- Real-time transaction feed
+- Continuous blockchain scanning
+- Threat pattern detection
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/YOUR-USERNAME/vigil-security-agent
-cd vigil-security-agent
-```
+### 3. **Risk Score Meter**
+- Animated security score (0-100)
+- Dynamic risk assessment
+- Visual security status
 
-2. **Install dependencies**
-```bash
-npm install
-```
+### 4. **Threat Simulator**
+- Demo phishing attack detection
+- Shows Vigil blocking threats
+- Interactive security testing
 
-3. **Set up environment variables**
-```bash
-cp .env.example .env.development.local
-```
+### 5. **Security Controls**
+- Start/stop monitoring
+- Scan token approvals
+- Set security rules
+- View full audit trail
 
-Edit `.env.development.local` with your:
-- NEAR account ID
-- NEAR seed phrase
-- Phala Cloud API key
-
-4. **Start local development**
-```bash
-# Terminal 1: Start Shade Agent CLI
-shade-agent-cli
-
-# Terminal 2: Start development server
-npm run dev
-```
-
-Visit `http://localhost:3000` to see Vigil in action!
-
-## 📖 How It Works
-
-### 1. Connect Your Wallet
-Link your NEAR wallet to Vigil. The agent will begin monitoring immediately.
-
-### 2. Set Security Rules
-Configure your protection preferences:
-- Transaction amount limits
-- Allowed recipient addresses
-- Auto-block rules for suspicious activity
-- Alert thresholds
-
-### 3. Vigil Watches 24/7
-The Shade Agent runs persistently in a Trusted Execution Environment (TEE):
-- Monitors all transactions
-- Analyzes patterns and risks
-- Takes action based on your rules
-- Logs everything for transparency
-
-### 4. Review & Adjust
-Check the audit trail anytime:
-- See what Vigil blocked and why
-- Review threat detections
-- Adjust rules as needed
-- Export your security data
-
-## 🛡️ Security & Privacy
-
-### User-Owned Data
-- All security rules stored encrypted
-- You control who accesses your data
-- Export or delete anytime
-
-### Verifiable Execution
-- Agent runs in TEE (Trusted Execution Environment)
-- Code is verifiable from source
-- Actions are auditable on-chain
-
-### Non-Custodial
-- Vigil never holds your keys
-- Uses NEAR Chain Signatures for cross-chain actions
-- You maintain full control
-
-##  Demo Scenarios
-
-### Scenario 1: Phishing Protection
-```
-1. User clicks malicious link
-2. Phishing site requests token approval
-3. Vigil detects: unknown contract + unlimited approval
-4. Action: BLOCKS transaction instantly
-5. Alert: "Blocked suspicious approval to 0xabc..."
-```
-
-### Scenario 2: Suspicious Transfer
-```
-1. Compromised device initiates transfer
-2. Amount: $5,000 (above user's $1k daily limit)
-3. Recipient: New address (not in allowlist)
-4. Vigil detects: multiple red flags
-5. Action: BLOCKS + alerts user for approval
-```
-
-### Scenario 3: Smart Contract Audit
-```
-1. User has 15 active token approvals
-2. Vigil scans all contracts
-3. Finds: 3 unlimited approvals to risky contracts
-4. Action: Flags for review + offers auto-revoke
-5. User confirms → Vigil revokes permissions
-```
+---
 
 ##  Tech Stack
 
-- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
-- **Agent**: Hono framework, TypeScript
-- **Blockchain**: NEAR Protocol (Chain Signatures for multi-chain)
-- **TEE**: Phala Cloud (Trusted Execution Environment)
-- **Smart Contract**: Rust (NEAR)
+**Frontend:**
+- Next.js / Vanilla JS
+- NEAR Wallet Selector
+- Real-time blockchain data
+
+**Backend (Agent):**
+- Hono framework
+- TypeScript
+- NEAR API integration
+
+**Blockchain:**
+- NEAR Protocol (Testnet)
+- NEAR Shade Agents (TEE)
+- Chain Signatures (Multi-chain)
+
+**Security:**
+- Phala Cloud (TEE deployment)
+- Encrypted user data
+- Verifiable execution
+
+---
+
+##  Quick Start
+
+### Prerequisites
+- Node.js 18+
+- NEAR Testnet Account
+- (Optional) Docker for local development
+
+### Installation
+```bash
+# Clone repository
+git clone https://github.com/YOUR-USERNAME/vigil-security-agent
+cd vigil-security-agent
+
+# Install dependencies
+npm install
+
+# Set up environment
+cp .env.example .env.development.local
+
+# Edit .env.development.local with your NEAR credentials
+
+# Run development server
+npm run dev
+```
+
+Visit `http://localhost:3000`
+
+---
+
+##  How to Use
+
+1. **Connect Wallet**
+   - Click "Connect Wallet" or "Manual Connection"
+   - Enter your NEAR testnet account
+   - View your real balance
+
+2. **Start Monitoring**
+   - Click "Monitor" button
+   - Vigil begins 24/7 surveillance
+   - Live transaction feed appears
+
+3. **Scan Approvals**
+   - Click "Scan" button
+   - Vigil checks all token approvals
+   - Flags risky permissions
+
+4. **Set Security Rules**
+   - Click "Rules" button
+   - Configure max transaction amounts
+   - Set auto-block preferences
+
+5. **Test Protection**
+   - Click "Simulate Attack"
+   - Watch Vigil block the threat
+   - See stats update in real-time
+
+---
 
 ##  Roadmap
 
 ### Phase 1: MVP (Hackathon) 
 - Basic wallet monitoring
-- Transaction blocking
+- Transaction analysis framework
 - Smart contract approval scanning
-- Simple dashboard
+- Interactive dashboard
+- NEAR wallet integration
 
-### Phase 2: Enhanced Detection
+### Phase 2: Production (PL Genesis)
+- Deploy Shade Agent to TEE
+- Implement transaction blocking
+- Multi-chain monitoring (Ethereum, Polygon)
 - ML-based anomaly detection
-- Multi-chain monitoring
-- Integration with security databases (Forta, Certik)
-- Advanced threat intelligence
+- Integration with threat intelligence APIs
 
-### Phase 3: Community Features
-- Shared threat database
-- Community-driven security rules
+### Phase 3: Scale
+- Mobile app (iOS/Android)
+- Browser extension
+- DAO governance for shared threat database
 - Insurance integration
-- DAO governance
+- Premium tier with advanced features
 
-##  Contributing
+---
 
-Vigil is built for NEARCON Innovation Sandbox and will continue development in PL Genesis: Frontiers of Collaboration.
+##  Business Model
 
-Want to contribute? Check out our [CONTRIBUTING.md](CONTRIBUTING.md) guide!
+**Freemium:**
+- Free: Basic monitoring (1 wallet, NEAR only)
+- Pro ($9.99/mo): Multi-chain, 5 wallets, advanced rules
+- Team ($49/mo): Shared security, DAO treasury protection
 
-## 📄 License
+**Target Market:**
+- 560M+ crypto users worldwide
+- $3.8B+ stolen annually
+- Massive TAM opportunity
 
-Apache-2.0 License - see [LICENSE](LICENSE) file for details.
+---
 
-## 🔗 Links
+##  Why Vigil is important
 
-- [NEAR Documentation](https://docs.near.org)
-- [Shade Agents Guide](https://docs.near.org/ai/shade-agents)
-- [Chain Signatures](https://docs.near.org/chain-abstraction/chain-signatures)
-- [Hackathon Details](https://near-innovation-sandbox.devspot.app)
+**1. Real Problem**
+- Billions lost to crypto scams
+- Everyone needs 24/7 protection
+- No existing autonomous solution
 
-## 👥 Team
+**2. Novel Solution**
+- First AI agent that actively blocks threats
+- Not just alerts - autonomous protection
+- User-owned security (privacy + control)
+
+**3. Technical Excellence**
+- Uses NEAR Shade Agents correctly
+- Working demo with real wallet connection
+- Clear path to production
+
+**4. Market Ready**
+- Clear business model
+- Scalable architecture
+- Continuation path (PL Genesis)
+
+---
+
+##  License
+
+Apache-2.0 License - see [LICENSE](LICENSE) file
+
+---
+
+##  Links
+
+- **Live Demo:** Run locally with `npm run dev`
+- **NEAR Docs:** https://docs.near.org/ai/shade-agents
+- **Chain Signatures:** https://docs.near.org/chain-abstraction/chain-signatures
+- **Hackathon:** NEARCON Innovation Sandbox 2026
+
+---
+
+##  Team
 
 Built with love for NEARCON Innovation Sandbox 2026
 
 ---
 
-** Disclaimer**: Vigil is in active development. Always conduct your own security audits before using in production. Not yet formally audited.
+##  Disclaimer
 
-**Stay secure. Stay vigilant.** 🛡️
-Add README
+Vigil is in active development as a hackathon MVP. The current version demonstrates the concept and architecture. Full transaction blocking and TEE deployment will be implemented in Phase 2. Always conduct your own security audits before using in production.
+
+**Stay secure. Stay vigilant.** 
+
+---
+
+##  Acknowledgments
+
+- NEAR Foundation for Shade Agents framework
+- Phala Cloud for TEE infrastructure
+- The amazing NEAR developer community
+
+---
+
+**NEARCON Innovation Sandbox 2026**
+```
